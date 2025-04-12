@@ -13,7 +13,7 @@ button_start.pack()
 ok_button = Button(master, text="ok")
 ok_button.pack_forget()
 
-# класс Gamer имеет атрибуты nickname, health_level и location,
+# Класс Gamer имеет атрибуты nickname, health_level и location,
 # соответствующие имени, уровню здоровья и местоположению игрока.
 # Местоположение в начале игры всегда третья локация.
 class Gamer:
