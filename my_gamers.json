@@ -1,0 +1,9 @@
+{
+	"gamers": [
+				{
+					"login": "Rice",
+					"health_level": "80",
+					"location": "City"
+				}
+			]
+}

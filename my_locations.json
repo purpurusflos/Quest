@@ -1,0 +1,61 @@
+{
+	"locations": [
+		{	"name": "City",
+			"description": "Busy sunny city",
+			"items": [
+					{"name": "umbrella","weight": 8}, 
+					 {"name": "coffee","weight": 3},
+					 {"name": "Pigeon","weight": 3}
+					 ],
+			"NPC": [
+					{"name": "Policeman", "lines": [
+										"Be careful on the road!",
+										"Is everything alright?"
+										]
+					},
+					{"name": "Street musician", "lines": [
+										"What a beautiful day!",
+										"I'm going to write a beautiful song today!"
+										]
+					}
+				]
+		},
+		{	"name": "Forest",
+			"description": "Quiet peaceful forest",
+			"items": [
+					{"name": "nettle","weight": 2}, 
+					 {"name": "berry","weight": 1},
+					 {"name": "Mouse","weight": 5}
+					 ],
+			"NPC": [
+				{"name": "Squirrel", "lines": [
+						"Hello!",
+						"Do you like nuts?"
+						]
+					},
+				{"name": "Hare", "lines": ["Good morning!",
+				"The grass is so green today!"]}
+						]
+		},
+		{	"name": "School",
+			"description": "Old ugly school",
+			"items": [
+					{"name": "textbook","weight": 7}, 
+					 {"name": "bun","weight": 2},
+					 {"name": "cockroach","weight": 1}
+					 ],
+			"NPC": [
+					{"name": "Teacher", "lines": [
+						"Don't run in the hall!",
+						"Why aren't you in class?"
+						]
+					},
+					{"name": "Student", "lines": [
+						"Exams are soon...",
+						"I've slept 4 hours today."
+						]
+					}
+					]
+		}
+	]
+}
