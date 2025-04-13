@@ -170,8 +170,14 @@ e = Entry(master)
 e.insert(0, "Type command ")
 e.pack_forget()
 
+m = Message(master, text="To choose an item, location or an NPC, type \
+     the number of the chosen object from the list of all possible options\
+      right after the command you've typed. \
+      Example: You can go to School, City, Theatre. Type 'go 3' to go to the theatre.")
+m.pack_forget()
 
 def actions(event):
+    hide(m)
     comm = e.get()
     if comm == "heal":
         text1["text"] = gamers.heal()
@@ -220,32 +226,8 @@ def actions(event):
             e.insert(0, "Type command ")
 
 
-menu = Menu(master)
-master.config(menu=menu)
-actions_menu = Menu(menu)
-menu.add_cascade(label='List of actions', menu=actions_menu)
-actions_menu.add_command(label='Who am I?')
-actions_menu.add_command(label='Where am I?')
-actions_menu.add_command(label="What's in my bag?")
-actions_menu.add_command(label='go')
-actions_menu.add_command(label='talk')
-actions_menu.add_command(label='put')
-actions_menu.add_command(label='take out')
-actions_menu.add_command(label='destroy')
-actions_menu.add_command(label='heal')
-actions_menu.add_command(label='damage')
-help_menu = Menu(menu)
-menu.add_cascade(label='Help', menu=help_menu)
-help_menu.add_command(label='How to choose an item/location/NPC')
-help_menu.add_separator()
-help_menu.add_command(label='Exit', command=master.quit)
-
-
 def help_choose():
-    text1["text"] = "To choose an item, location or an NPC, type \
-     the number of the chosen object from the list of all possible options\
-      right after the command you've typed. \
-      Example: You can go to School, City, Theatre. Type 'go 3' to go to the theatre."
+    appear(m)
 
 
 def hide(widget):
@@ -264,8 +246,27 @@ def start_screen(event):
     appear(ok_button)
 
 
+menu = Menu(master)
+master.config(menu=menu)
+actions_menu = Menu(menu)
+menu.add_cascade(label='List of actions', menu=actions_menu)
+actions_menu.add_command(label='Who am I?')
+actions_menu.add_command(label='Where am I?')
+actions_menu.add_command(label="What's in my bag?")
+actions_menu.add_command(label='go')
+actions_menu.add_command(label='talk')
+actions_menu.add_command(label='put')
+actions_menu.add_command(label='take out')
+actions_menu.add_command(label='destroy')
+actions_menu.add_command(label='heal')
+actions_menu.add_command(label='damage')
+help_menu = Menu(menu)
+menu.add_cascade(label='Help', menu=help_menu)
+help_menu.add_command(label='How to choose an item/location/NPC', command=help_choose)
+help_menu.add_separator()
+help_menu.add_command(label='Exit', command=master.quit)
+
 button_start.bind('<Button-1>', start_screen)
 ok_button.bind('<Button-1>', actions)
-# help_menu.entryconfig(0, command=help_choose)
 
 mainloop()
